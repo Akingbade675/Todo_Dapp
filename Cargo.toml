@@ -1,0 +1,37 @@
+[package]
+name = "test_near"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+near-sdk = "5.1.0"
+chrono = "0.4.38"
+
+[dev-dependencies]
+near-sdk = { version = "5.1.0", features = ["unit-testing"] }
+near-workspaces = { version = "0.10.0", features = ["unstable"] }
+tokio = { version = "1.12.0", features = ["full"] }
+serde_json = "1"
+
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+# Opt into extra safety checks on arithmetic operations https://stackoverflow.com/a/64136471/249801
+overflow-checks = true
+
+
+serde = { version = "1", features = ["derive"] }
+borsh = "^^2"
+
+
+near-sdk-collections = "0.1.0"
+
+near-sdk = { version = "5.1.0", features = ["collections"] }

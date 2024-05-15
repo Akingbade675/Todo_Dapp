@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  height: 200px;
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 28px;
+}
+
+.score {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 900;
+  background-color: orange;
+}
+
+.remark {
+  font-weight: 200;
+  letter-spacing: 1.5px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

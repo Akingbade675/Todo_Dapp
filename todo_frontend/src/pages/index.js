@@ -1,14 +1,22 @@
-import Image from 'next/image';
+import Image from "next/image";
 
-import NearLogo from '/public/near.svg';
-import NextLogo from '/public/next.svg';
-import styles from '@/styles/app.module.css';
-import { DocsCard, HelloComponentsCard, HelloNearCard } from '@/components/cards';
+import Main from "@/pages/Main";
+import Search from "@/components/Search";
+import Tasks from "@/pages/Tasks";
+
+import NearLogo from "/public/near.svg";
+import NextLogo from "/public/next.svg";
+import styles from "@/styles/app.module.css";
+import {
+  DocsCard,
+  HelloComponentsCard,
+  HelloNearCard,
+} from "@/components/cards";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}> </div>
+      {/* <div className={styles.description}> </div>
 
       <div className={styles.center}>
         <Image
@@ -34,7 +42,11 @@ export default function Home() {
         <HelloComponentsCard />
         <HelloNearCard />
         <DocsCard />
-      </div>
+      </div> */}
+
+      <Main>
+        <Search />
+      </Main>
     </main>
   );
 }

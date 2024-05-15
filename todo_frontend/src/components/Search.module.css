@@ -1,0 +1,22 @@
+.add {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: orange;
+    border: none;
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-block: 40px;
+}
+
+.input {
+    border-radius: 20px;
+    border: none;
+    width: 350px;
+    padding: 10px;
+}

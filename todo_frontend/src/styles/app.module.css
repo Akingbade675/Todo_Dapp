@@ -106,6 +106,12 @@
   opacity: 0.3;
 }
 
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .logo {
   position: relative;
 }

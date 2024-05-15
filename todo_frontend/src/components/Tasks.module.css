@@ -1,60 +1,56 @@
 .task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid gray;
-    min-width: 400px;
-    padding-inline: 15px;
-    padding-block: 9px;
-    border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid gray;
+  min-width: 400px;
+  padding-inline: 15px;
+  padding-block: 9px;
+  border-radius: 8px;
 }
 
-
-
 .right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .check {
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    background: rgb(23, 216, 23);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  background: rgb(23, 216, 23);
 }
 
 .uncheck {
-    background: none;
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    border: 1px solid orange
-    
+  background: none;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  border: 1px solid orange;
 }
 
 .strikeThrough {
-    text-decoration: line-through;
-    font-weight: 700;
+  text-decoration: line-through;
+  font-weight: 700;
 }
 
 .iconButton {
-border: none;
-background-color: none;
-background-color: transparent;
+  border: none;
+  background-color: none;
+  background-color: transparent;
 }
 
 .left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
 }
 
 .icon {
-    border: none;
-    color: white;
-    outline: none;
-    width: 20px;
-    
+  border: none;
+  color: white;
+  outline: none;
+  width: 20px;
 }

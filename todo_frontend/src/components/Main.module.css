@@ -24,3 +24,9 @@
   font-weight: 200;
   letter-spacing: 1.5px;
 }
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

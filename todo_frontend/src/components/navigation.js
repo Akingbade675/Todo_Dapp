@@ -17,7 +17,8 @@ export const Navigation = () => {
 
         if (signedAccountId) {
             setAction(() => wallet.signOut)
-            setLabel(`Logout ${signedAccountId}`)
+            // setLabel(`Logout ${signedAccountId}`)
+            setLabel('Logout')
             setLoggedIn(true)
         } else {
             setAction(() => wallet.signIn)
@@ -38,7 +39,11 @@ export const Navigation = () => {
                 </div>
                 <div className="navbar-nav pt-1">
                     <button
-                        className={`btn btn-secondary ${styles.authBtn}`}
+                        className={`btn btn-secondary ${
+                            loggedIn
+                                ? styles.loggedInAuthBtn
+                                : styles.loggedOutAuthBtn
+                        }`}
                         onClick={action}
                     >
                         {' '}

@@ -24,6 +24,6 @@
 
 @media (max-width: 700px) {
     .input {
-        /* width: 270px; */
+        width: 250px;
     }
 }

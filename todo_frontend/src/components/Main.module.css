@@ -1,0 +1,63 @@
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    height: 200px;
+    width: 400px;
+    border: 1px solid gray;
+    border-radius: 28px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .main {
+        width: 85%;
+        align-self: center;
+        justify-content: space-between;
+        margin-inline: auto;
+        padding-inline: 20px;
+        height: 170px;
+    }
+
+    .score {
+        width: 20px;
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .remark {
+        font-size: 12px;
+    }
+
+    .tasks {
+        gap: 5px;
+    }
+
+    .hTxt {
+        font-size: 20px;
+    }
+}
+
+.score {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+    color: #230504;
+    font-weight: 900;
+    background-color: #f54118;
+}
+
+.remark {
+    font-weight: 200;
+    letter-spacing: 1.5px;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

@@ -1,0 +1,47 @@
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+}
+
+.brand span {
+    color: #f54118;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    max-width: var(--max-width);
+    width: 100%;
+    margin-inline: auto;
+}
+
+.loggedInAuthBtn {
+    border: none;
+    background-color: #f54118;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: background-color 200ms;
+}
+
+.loggedOutAuthBtn {
+    border: none;
+    background-color: grey;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: background-color 200ms;
+}

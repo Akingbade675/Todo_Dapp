@@ -1,40 +1,60 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import NearLogo from '/public/near.svg';
-import NextLogo from '/public/next.svg';
-import styles from '@/styles/app.module.css';
-import { DocsCard, HelloComponentsCard, HelloNearCard } from '@/components/cards';
+import Main from '@/pages/Main'
+import Search from '@/components/Search'
+import Tasks from './Task'
+
+import NearLogo from '/public/near.svg'
+import NextLogo from '/public/next.svg'
+import styles from '@/styles/app.module.css'
+import { useEffect, useState } from 'react'
+import { useStore } from '@/layout'
+import useListStore from '../../stores/ListStore'
+import {
+    DocsCard,
+    HelloComponentsCard,
+    HelloNearCard,
+} from '@/components/cards'
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}> </div>
+    const { Lists, setLists } = useListStore()
+    const { signedAccountId, wallet } = useStore()
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src={NearLogo}
-          alt="NEAR Logo"
-          width={110 * 1.5}
-          height={28 * 1.5}
-          priority
-        />
-        <h3 className="ms-2 me-3 text-dark"> + </h3>
-        <Image
-          className={styles.logo}
-          src={NextLogo}
-          alt="Next.js Logo"
-          width={300 * .58}
-          height={61 * .58}
-          priority
-        />
-      </div>
+    useEffect(() => {
+        if (!wallet) return
 
-      <div className={styles.grid}>
-        <HelloComponentsCard />
-        <HelloNearCard />
-        <DocsCard />
-      </div>
-    </main>
-  );
+        if (signedAccountId) {
+            console.log(signedAccountId)
+            wallet
+                .viewMethod({
+                    contractId: 'bhobo1.testnet',
+                    method: 'get_todos',
+                    args: { account_id: signedAccountId },
+                })
+                .then((todos) => setLists(todos))
+                .catch((value) => console.error(value))
+            setIsLoggedIn(true)
+        } else {
+            setIsLoggedIn(false)
+        }
+    }, [signedAccountId, wallet])
+
+    return (
+        <main className={styles.main}>
+            {isLoggedIn ? (
+                <Main>
+                    <Search />
+                </Main>
+            ) : (
+                <div>
+                    <h2>Welcome to our Todo Dapp!</h2>
+                    <p>
+                        Our Todo Dapp helps you organize your tasks efficiently.
+                        Log in to start managing your todos and stay organized.
+                    </p>
+                </div>
+            )}
+        </main>
+    )
 }

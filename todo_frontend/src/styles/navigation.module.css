@@ -20,7 +20,7 @@
     margin-inline: auto;
 }
 
-.loggedInAuthBtn {
+.loggedOutAuthBtn {
     border: none;
     background-color: #f54118;
     color: #fff;
@@ -33,7 +33,7 @@
     transition: background-color 200ms;
 }
 
-.loggedOutAuthBtn {
+.loggedInAuthBtn {
     border: none;
     background-color: grey;
     color: #fff;
